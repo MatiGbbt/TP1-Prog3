@@ -4,7 +4,7 @@
 import express from 'express'
 import morgan from 'morgan'
 import cookieParser from 'cookie-parser'
-
+import cors from 'cors'
 import config from './config.js'
 
 //swagger (documentación)
@@ -25,6 +25,7 @@ app.set("port", config.port)
 app.use(morgan('dev'))
 app.use(express.json())
 app.use(cookieParser())
+app.use(cors())
 //
 
 app.use('/api',authRoutes)
