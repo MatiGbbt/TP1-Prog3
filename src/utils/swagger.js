@@ -11,10 +11,10 @@ const doc = {
    host: 'localhost:' + config.port
 };
 
-const outputFile = '../../swagger-output.json';
+const outputFile = '../../swagger-output.json'
 const routes = [
   "src/routes/auth.routes.js",
   "src/routes/task.routes.js"
 ];
 
-swaggerAutogen(outputFile, routes, doc);
+swaggerAutogen(outputFile, routes, doc)

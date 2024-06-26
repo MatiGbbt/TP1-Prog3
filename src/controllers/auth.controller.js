@@ -48,7 +48,7 @@ export const login = async (req, res) => {
 
     try {
         
-        //busca el usuario en la DB por el maild
+        //busca el usuario en la DB por el mail
         const userFound = await User.findOne({email})
 
         if (!userFound) return res.status(400).json({message: "Usuario No Encontrado."}); //si no lo encuentra retorna un 400 + msg
