@@ -12,7 +12,7 @@ import swaggerUi from 'swagger-ui-express'
 import swaggerDocument from '../swagger-output.json' assert { type: 'json' }
 
 //rutas
-import authRoutes from './routes/auth.routes.js'
+import userRoutes from './routes/user.routes.js'
 import taskRoutes from './routes/task.routes.js'
 
 
@@ -28,7 +28,7 @@ app.use(cookieParser())
 app.use(cors())
 //
 
-app.use('/api',authRoutes)
+app.use('/api',userRoutes)
 app.use('/api',taskRoutes)
 
 //swagger (documentación)

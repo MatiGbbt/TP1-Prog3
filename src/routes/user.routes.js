@@ -1,5 +1,5 @@
 import {Router} from 'express'
-import {register, login, logout} from '../controllers/auth.controller.js'
+import {register, login, logout} from '../controllers/user.controller.js'
 import {authRequire} from '../middlewares/jwt.js'
 
 const router =  Router()

@@ -27,6 +27,7 @@ export const register = async (req, res) => {
         //res
         res.cookie('token', token)//token por cookie
         res.json({ //datos especificos que retonar el json
+            msg: 'Usuario Registrado Correctamente',
             id: savedUser._id,
             username: savedUser.username,
             email: savedUser.email,
@@ -62,6 +63,7 @@ export const login = async (req, res) => {
         //res
         res.cookie('token', token)//token por cookie
         res.json({ //datos especificos que retonar el json
+            msg: 'Usuario Logueado Correctamente',
             id: userFound._id,
             username: userFound.username,
             email: userFound.email,
@@ -79,5 +81,5 @@ export const login = async (req, res) => {
 
 export const logout = async (req, res) => {
     res.cookie('token', "",{expires: new Date(0)})
-    return res.sendStatus(200)    
+    return res.send('Usuario Cerrado Correctamente')    
 }
