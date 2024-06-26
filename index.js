@@ -8,4 +8,8 @@ const port = app.get("port")
 connectDB()
 app.listen(port)
 
+app.get("/", (req, res) => {
+    res.send('Hola Sergio. Deploy Funcionando :D')
+})
+
 console.log('Servidor escuchando en el puerto: ', port)
