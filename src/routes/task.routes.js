@@ -4,14 +4,14 @@ import {authRequire} from '../middlewares/jwt.js'
 
 const router =  Router()
 
-router.get('/getTasks', getTasks)
+router.get('/getTasks', authRequire, getTasks)
 
-router.get('/getTask/:id', getTask)
+router.get('/getTask/:id', authRequire, getTask)
 
 router.post('/createTask', authRequire, createTask)
 
-router.put('/updateTask', updateTask)
+router.put('/updateTask/:id', authRequire, updateTask)
 
-router.delete('/deleteTask', deleteTask)
+router.delete('/deleteTask/:id', authRequire, deleteTask)
 
 export default router
