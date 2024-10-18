@@ -1,21 +1,11 @@
 import Task from '../models/task.model.js'
 
 export const getTasks = async (req, res) => {
-
     try {
-
-        const options = {
-            page: 1,
-            limit: 3,
-            populate: 'user'
-        }
-
-        const tasks = await Task.paginate({"user": req.user.id}, options)
+        const tasks = await Task.find({ "user": 'Matias Gobbato' })
         res.json(tasks)
     } catch (error) {
-
-        res.status(500).json({message: error.message})
-
+        res.status(500).json({ message: error.message });
     }
 }
 
@@ -23,7 +13,7 @@ export const getTask = async (req, res) => {
 
     try {
 
-        const task = await Task.findById(req.params.id).populate('user')
+        const task = await Task.findById(req.params.id)
         if (!task) return res.status(404).json ; res.json(task) 
 
     } catch (error) {
@@ -43,7 +33,7 @@ export const createTask = async (req, res) => {
         title,
         description,
         date,
-        user: req.user.id
+        user: 'Matias Gobbato'
         })
 
         const savedTask = await newTask.save()
